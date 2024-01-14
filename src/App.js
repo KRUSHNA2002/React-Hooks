@@ -15,6 +15,8 @@ import { BrowserRouter as Router , Routes , Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PageNotFound from './components/PageNotFound';
 import MyNavbar from './components/MyNavbar';
+import Hooks from './components/Hooks';
+import Api from './components/Api';
 
 function App() {
   return (
@@ -46,6 +48,8 @@ function App() {
         <Route path='/movies' element={<Movies/>}/>
         <Route path='/About' element={<About/>}/>
         <Route path='/Login' element={<Login/>}/>
+        <Route path='/hooks' element={<Hooks/>}/>
+        <Route path='/api' element={<Api/>}/>
         <Route path='*' element={<PageNotFound/>}/>
       </Routes>
     </Router>
