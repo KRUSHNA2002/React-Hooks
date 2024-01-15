@@ -114,76 +114,110 @@
 // *********************************************************** Hello useState Array of object Hook ****************************************************
 
 
-import React , {useState} from 'react';
+// import React , {useState} from 'react';
+
+// const Hooks=()=>{
+
+//     const[student , setStudent]=useState([]);
+
+//    const addStudent=()=>{
+
+//     const id=window.prompt("Enter the student id :")
+//     const name=window.prompt("Enter the student name :")
+//     const course=window.prompt("Enter the student course :")
+//     const age=window.prompt("Enter the student age :")
+
+//     if(id !=="")
+//     {
+//         setStudent([...student,{id,name,course,age}]);
+//     }
+//     else if(id === "")
+//     {
+//       alert("Please enter the id")
+//     }
+//    }
+
+//    const removestudent=()=>{
+//     const id=window.prompt("Enter the remove student id :")
+
+//    const updateStudent=student.filter((std)=>{
+
+//       return std.id !==id;
+//    })
+
+//    setStudent(updateStudent);
+
+//    }
+//     return(
+
+//         <>
+//           <div className="container  text-center my-4">
+//              <h1>Hello useState Array of object Hook</h1>
+//              <button className='btn btn-primary my-3 mx-2' onClick={addStudent}>Add student</button>
+//              <button className='btn btn-danger my-3' onClick={removestudent}>Delete student</button>
+
+
+//                                   <table className='table table-bordered my-3'>
+//                                      <tr>
+//                                         <th>sr</th>
+//                                         <th>Name</th>
+//                                         <th>course</th>
+//                                         <th>Age</th>
+//                                     </tr>
+//                                     {
+//                              student.map((val,i) => {
+//                                 return(
+//                                     <tr>
+//                                         <td>{i+1}</td>
+//                                         <td>{val.name}</td>
+//                                         <td>{val.course}</td>
+//                                         <td>{val.age}</td>
+//                                     </tr>
+//                                 );
+                                
+//                                })
+//                             }
+//                              </table>
+
+            
+//           </div>
+          
+//         </>
+//     );
+// }
+
+// export default Hooks;
+
+
+// *********************************************************** UseEffect Hook ******************************************8
+
+import React from 'react';
+import {useEffect , useState} from 'react';
+
+
 
 const Hooks=()=>{
 
-    const[student , setStudent]=useState([]);
+    const [count1 , setCount1]=useState(0);
+    const [count2 , setCount2]=useState(0);
 
-   const addStudent=()=>{
+useEffect(()=>{
+    console.log('API call');
+},[count2])
 
-    const id=window.prompt("Enter the student id :")
-    const name=window.prompt("Enter the student name :")
-    const course=window.prompt("Enter the student course :")
-    const age=window.prompt("Enter the student age :")
-
-    if(id !=="")
-    {
-        setStudent([...student,{id,name,course,age}]);
-    }
-    else if(id === "")
-    {
-      alert("Please enter the id")
-    }
-   }
-
-   const removestudent=()=>{
-    const id=window.prompt("Enter the remove student id :")
-
-   const updateStudent=student.filter((std)=>{
-
-      return std.id !==id;
-   })
-
-   setStudent(updateStudent);
-
-   }
     return(
+<>
+     <div className="container text-center my-2">
 
-        <>
-          <div className="container  text-center my-4">
-             <h1>Hello useState Array of object Hook</h1>
-             <button className='btn btn-primary my-3 mx-2' onClick={addStudent}>Add student</button>
-             <button className='btn btn-danger my-3' onClick={removestudent}>Delete student</button>
+        <h1>Hello from UseEffect Hooks</h1>
+        <br></br>
+        <h1>Count1 :{count1}</h1>
+        <h1>Count2 : {count2}</h1>
 
-
-                                  <table className='table table-bordered my-3'>
-                                     <tr>
-                                        <th>sr</th>
-                                        <th>Name</th>
-                                        <th>course</th>
-                                        <th>Age</th>
-                                    </tr>
-                                    {
-                             student.map((val,i) => {
-                                return(
-                                    <tr>
-                                        <td>{i+1}</td>
-                                        <td>{val.name}</td>
-                                        <td>{val.course}</td>
-                                        <td>{val.age}</td>
-                                    </tr>
-                                );
-                                
-                               })
-                            }
-                             </table>
-
-            
-          </div>
-          
-        </>
+        <button className='btn btn-primary mx-2 my-4' onClick={()=>setCount1(count1+1)}>Increment1</button>
+        <button className='btn btn-primary mx-2 my-4' onClick={()=>setCount2(count2+1)}>Increment2</button>
+     </div>
+</>
     );
 }
-
 export default Hooks;
