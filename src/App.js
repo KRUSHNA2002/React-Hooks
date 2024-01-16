@@ -17,6 +17,7 @@ import PageNotFound from './components/PageNotFound';
 import MyNavbar from './components/MyNavbar';
 import Hooks from './components/Hooks';
 import Api from './components/Api';
+import Classcomp from './components/Classcomp';
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
         <Route path='/Login' element={<Login/>}/>
         <Route path='/hooks' element={<Hooks/>}/>
         <Route path='/api' element={<Api/>}/>
+        <Route path='/classcomp' element={<Classcomp name="krushna" lastname="waghumbare"/>}/>
         <Route path='*' element={<PageNotFound/>}/>
       </Routes>
     </Router>

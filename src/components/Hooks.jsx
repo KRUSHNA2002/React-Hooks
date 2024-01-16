@@ -191,33 +191,89 @@
 
 // *********************************************************** UseEffect Hook ******************************************8
 
-import React from 'react';
-import {useEffect , useState} from 'react';
+// import React from 'react';
+// import {useEffect , useState} from 'react';
 
 
 
-const Hooks=()=>{
+// const Hooks=()=>{
 
-    const [count1 , setCount1]=useState(0);
-    const [count2 , setCount2]=useState(0);
+//     const [count1 , setCount1]=useState(0);
+//     const [count2 , setCount2]=useState(0);
 
-useEffect(()=>{
-    console.log('API call');
-},[count2])
+// useEffect(()=>{
+//     console.log('API call');
+// },[count2])
 
+//     return(
+// <>
+//      <div className="container text-center my-2">
+
+//         <h1>Hello from UseEffect Hooks</h1>
+//         <br></br>
+//         <h1>Count1 :{count1}</h1>
+//         <h1>Count2 : {count2}</h1>
+
+//         <button className='btn btn-primary mx-2 my-4' onClick={()=>setCount1(count1+1)}>Increment1</button>
+//         <button className='btn btn-primary mx-2 my-4' onClick={()=>setCount2(count2+1)}>Increment2</button>
+//      </div>
+// </>
+//     );
+// }
+// export default Hooks;
+
+
+// ****************************************************   Form Handling ************************************************************
+import React, { useState } from 'react';
+
+const Hooks =()=>{
+
+    const [input , setInput]=useState({
+
+        userName:'',
+        passWord:''
+
+    });
+
+    const handleChange=(e)=>{
+
+        setInput({
+            ...input,
+            [e.target.name]:e.target.value
+        })
+
+
+    }
     return(
-<>
-     <div className="container text-center my-2">
+        <>
+        
+     <div className="container text-center">
+                    <h1 className='my-4'>Form Handling</h1>
 
-        <h1>Hello from UseEffect Hooks</h1>
-        <br></br>
-        <h1>Count1 :{count1}</h1>
-        <h1>Count2 : {count2}</h1>
+                <input type="text" className='mx-2'
+                placeholder='Enter your Name'
+                onChange={handleChange}
+                name='userName'
+                value={input.userName}
 
-        <button className='btn btn-primary mx-2 my-4' onClick={()=>setCount1(count1+1)}>Increment1</button>
-        <button className='btn btn-primary mx-2 my-4' onClick={()=>setCount2(count2+1)}>Increment2</button>
+
+                />
+
+                <input type="text"
+                placeholder='Enter your password'
+                onChange={handleChange}
+                name='passWord'
+                value={input.passWord}
+
+
+                />
+
+                <h1 className='my-4'>UserName : {input.userName}</h1>
+                <h1 className='my-4'>PassWord :{input.passWord}</h1>
      </div>
-</>
+        
+        </>
     );
-}
-export default Hooks;
+    }
+
+    export default Hooks;

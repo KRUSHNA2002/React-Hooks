@@ -2,7 +2,6 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { NavLink } from 'react-router-dom';
 
 const MyNavbar = () =>{
@@ -24,6 +23,7 @@ const MyNavbar = () =>{
                 <li><NavLink className="nav-link" to='/login'>Login</NavLink></li>
                 <li><NavLink className="nav-link" to='/hooks'>Hooks</NavLink></li>
                 <li><NavLink className="nav-link" to='/api'>Api</NavLink></li>
+                <li><NavLink className="nav-link" to='/classcomp'>Classcomp</NavLink></li>
                 <li><NavLink className="nav-link" to='*'></NavLink></li>
              
           </Nav>
